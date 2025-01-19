@@ -8,8 +8,13 @@
   },
   "dependencies": {
     "egg": "^3.17.5",
-    "egg-mysql": "^4.0.0",
-    "egg-scripts": "2"
+    "egg-cors": "^3.0.1",
+    "egg-jwt": "^3.1.7",
+    "egg-scripts": "2",
+    "egg-sequelize": "^6.0.0",
+    "egg-websocket-plugin": "^3.0.0-beta.0",
+    "mysql2": "^3.12.0",
+    "sequelize-cli": "^6.6.2"
   },
   "devDependencies": {
     "egg-bin": "6",

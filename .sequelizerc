@@ -1,0 +1,12 @@
+"use strict";
+
+const path = require("path");
+
+module.exports = {
+  // 配置文件目录
+  config: path.join(__dirname, "database/config.json"),
+  // 数据库配置文件目录
+  "seeders-path": path.join(__dirname, "database/seeders"),
+  // 数据库迁移文件目录
+  "migrations-path": path.join(__dirname, "database/migrations"),
+};

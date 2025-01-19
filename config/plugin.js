@@ -4,9 +4,20 @@ module.exports = {
   // static: {
   //   enable: true,
   // }
-  mysql: {
+  sqeulize: {
     enable: true,
-    package: 'egg-mysql'
-  }
+    package: "egg-sequlize",
+  },
+  cors: {
+    enable: true,
+    package: "egg-cors",
+  },
+  websocket: {
+    enable: true,
+    package: "egg-websocket",
+  },
+  jwt: {
+    enable: true,
+    package: "egg-jwt",
+  },
 };
-

@@ -1,5 +1,7 @@
-const userServices = {
-  async getUserInfo(ctx) {},
+const { Service } = require('egg');
+
+class UserService extends Service {
+  async getUserInfo(ctx) { }
 
   async login(ctx) {
     const { account, password } = ctx.request.body;
@@ -18,7 +20,7 @@ const userServices = {
         token: "1234567890",
       },
     };
-  },
+  }
 
   async register(ctx) {
     const { account, password } = ctx.request.body;
@@ -36,7 +38,7 @@ const userServices = {
         msg: "注册成功",
       },
     };
-  },
-};
+  }
+}
 
-export default userServices;
+module.exports = UserService;

@@ -1,16 +1,16 @@
 {
   "development": {
     "username": "root",
-    "password": "362123l+L",
-    "database": "egg-wrod",
+    "password": "123456",
+    "database": "egg-word",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "timezone": "+08:00"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "database_test",
+    "password": "123456",
+    "database": "egg-word",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

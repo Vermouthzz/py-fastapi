@@ -16,4 +16,5 @@ npx sequelize db:migrate:undo:all   //回到初始状态
 
 ## 配置 eroor 中间件
 
+
 ## 配置 websocket

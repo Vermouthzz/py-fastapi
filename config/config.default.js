@@ -17,7 +17,7 @@ module.exports = (appInfo) => {
   config.middleware = ["authToken"];
   config.authToken = {
     enable: true,
-    ignore: ["/api/login", "/api/register"], // 需要忽略的接口
+    ignore: ["/api/login", "/api/register", "/ws"], // 需要忽略的接口
   };
 
   // add your user config here

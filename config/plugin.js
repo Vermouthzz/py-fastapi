@@ -6,7 +6,7 @@ module.exports = {
   // }
   sqeulize: {
     enable: true,
-    package: "egg-sequlize",
+    package: "egg-sequelize",
   },
   cors: {
     enable: true,
@@ -14,7 +14,7 @@ module.exports = {
   },
   websocket: {
     enable: true,
-    package: "egg-websocket",
+    package: "egg-websocket-plugin",
   },
   jwt: {
     enable: true,

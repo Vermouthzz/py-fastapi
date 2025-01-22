@@ -1,10 +1,17 @@
 const { Controller } = require("egg");
-const { default: userServices } = require("../services/user");
 
 class UserController extends Controller {
   async userinfo() {
-    const { ctx } = this;
-    return userServices.getUserInfo(ctx);
+    const { ctx, app } = this;
+    return ctx.service.user.getUserInfo();
+  }
+  async login() {
+    const { ctx, app } = this;
+    return ctx.service.user.login();
+  }
+  async register() {
+    const { ctx, app } = this;
+    return ctx.service.user.register();
   }
 }
 

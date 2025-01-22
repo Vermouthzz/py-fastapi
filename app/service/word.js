@@ -1,8 +1,8 @@
-const { Service } = require('egg');
+const { Service } = require("egg");
 
 class WordService extends Service {
   async getWordList(ctx) {
-    return data[0];
+    return 111;
   }
 }
 

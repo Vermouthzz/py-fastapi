@@ -37,7 +37,7 @@ module.exports = (appInfo) => {
     port: 3306,
     database: "egg-word",
     username: "root",
-    password: "123456",
+    password: "362123l+L",
     timezone: "+08:00", // 中国时区
     define: {
       freezeTableName: true, // 默认false，当为false的时候， sequelize会自动将表名设置为复数，例如model:User表名就是users

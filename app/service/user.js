@@ -1,9 +1,10 @@
-const { Service } = require('egg');
+const { Service } = require("egg");
 
 class UserService extends Service {
-  async getUserInfo(ctx) { }
+  async getUserInfo() {}
 
-  async login(ctx) {
+  async login() {
+    const { ctx } = this;
     const { account, password } = ctx.request.body;
     const loginRes = await ctx.model.User.findOne({ account, password });
     if (!loginRes) {
@@ -13,7 +14,7 @@ class UserService extends Service {
       };
       return;
     }
-    const tokn = await ctx.app.jwt.sign({ account }, "1234567890");
+    const tokn = ctx.app.jwt.sign({ account }, "1234567890");
     return {
       code: 200,
       data: {
@@ -22,7 +23,9 @@ class UserService extends Service {
     };
   }
 
-  async register(ctx) {
+  async register() {
+    const { ctx } = this;
+
     const { account, password } = ctx.request.body;
     const registerRes = await ctx.model.User.create({ account, password });
     if (!registerRes) {

@@ -4,7 +4,7 @@ module.exports = {
   // static: {
   //   enable: true,
   // }
-  sqeulize: {
+  sequelize: {
     enable: true,
     package: "egg-sequelize",
   },

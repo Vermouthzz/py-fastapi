@@ -3,6 +3,7 @@
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
+const path = require("path");
 module.exports = (appInfo) => {
   /**
    * built-in config
@@ -25,6 +26,18 @@ module.exports = (appInfo) => {
     // myAppName: 'egg',
   };
 
+  // config.logger = {
+  //   dir: path.join(__dirname, "../app/logs"),
+  // };
+
+  config.watcher = {
+    ignore: [
+      /.*\.log$/,
+      /.*\.d\.ts$/,
+      /.*\.map$/,
+    ], // 忽略的文件
+  }
+
   config.jwt = {
     secret: "lhw5201314",
     match: /^\/api/,
@@ -37,7 +50,7 @@ module.exports = (appInfo) => {
     port: 3306,
     database: "egg-word",
     username: "root",
-    password: "362123l+L",
+    password: "123456",
     timezone: "+08:00", // 中国时区
     define: {
       freezeTableName: true, // 默认false，当为false的时候， sequelize会自动将表名设置为复数，例如model:User表名就是users

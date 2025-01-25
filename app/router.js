@@ -1,12 +1,14 @@
 /**
  * @param {Egg.Application} app - egg application
  */
-const Word = require("./router/word");
+// const Word = require("./router/word");
 const User = require("./router/user");
 module.exports = (app) => {
   const { router, controller } = app;
   // Word(app);
   User(app);
+
+
   // app.ws.use(async (ctx, next) => {
   //   const token = ctx.query.token;
   //   try {
@@ -34,6 +36,6 @@ module.exports = (app) => {
   //   }
   //   await next();
   // });
-  app.ws.matches = new Map();
+  // app.ws.matches = new Map();
   app.ws.route("/ws", controller.interaction.joinAttack);
 };

@@ -14,7 +14,8 @@
     "egg-sequelize": "^6.0.0",
     "egg-websocket-plugin": "^3.0.0-beta.0",
     "mysql2": "^3.12.0",
-    "sequelize-cli": "^6.6.2"
+    "sequelize-cli": "^6.6.2",
+    "uuid": "^11.0.5"
   },
   "devDependencies": {
     "egg-bin": "6",
@@ -28,7 +29,7 @@
   "scripts": {
     "start": "egg-scripts start --daemon --title=egg-server-2025毕业设计",
     "stop": "egg-scripts stop --title=egg-server-2025毕业设计",
-    "dev": "egg-bin dev",
+    "dev": "egg-bin dev --port 3000",
     "test": "npm run lint -- --fix && npm run test:local",
     "test:local": "egg-bin test",
     "cov": "egg-bin cov",

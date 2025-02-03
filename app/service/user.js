@@ -1,12 +1,12 @@
 const { Service } = require("egg");
 
 class UserService extends Service {
-  async getUserInfo() {}
+  async getUserInfo() { }
 
   async login() {
     const { ctx } = this;
     const { account, password } = ctx.request.body;
-    const loginRes = await ctx.model.User.findOne({ account, password });
+    const loginRes = await ctx.model.User.findOne({ where: { account, password } });
     if (!loginRes) {
       ctx.body = {
         code: 400,
@@ -14,11 +14,15 @@ class UserService extends Service {
       };
       return;
     }
-    const tokn = ctx.app.jwt.sign({ account }, "1234567890");
-    return {
+    const token = ctx.generateToken({ user_id: loginRes.id });
+
+    Reflect.deleteProperty(loginRes, "password");
+    Reflect.deleteProperty(loginRes, "id");
+    ctx.body = {
       code: 200,
       data: {
-        token: "1234567890",
+        token,
+        userinfo: loginRes,
       },
     };
   }
@@ -26,7 +30,7 @@ class UserService extends Service {
   async register() {
     const { ctx } = this;
 
-    const { account, password } = ctx.request.body;
+    const { account, password, username } = ctx.request.body;
     const registerRes = await ctx.model.User.create({ account, password });
     if (!registerRes) {
       ctx.body = {
@@ -35,7 +39,7 @@ class UserService extends Service {
       };
       return;
     }
-    return {
+    ctx.body = {
       code: 200,
       data: {
         msg: "注册成功",

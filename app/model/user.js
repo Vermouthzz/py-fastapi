@@ -24,6 +24,9 @@ module.exports = (app) => {
     },
     created_at: DATE,
     updated_at: DATE,
+  }, {
+    // 禁用软删除
+    paranoid: false,
   });
 
   return User;
